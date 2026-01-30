@@ -86,7 +86,8 @@ vagrant destroy
 
 - Uses more RAM and disk space
 
-- Separate full OS required
+- Seperate full os required
+
   ---
  ## Part B – Container using Docker
  ---
@@ -122,15 +123,15 @@ docker stop <container_id>
 ---
 ### Observations (Container)
 
-Starts within seconds
+- Starts within seconds
 
-Lightweight
+- Lightweight
 
-Uses less memory
+- Uses less memory
 
-Shares host OS
+- Shares host OS
 
-Faster performance
+- Faster performance
 
 
 
