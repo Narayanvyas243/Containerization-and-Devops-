@@ -1,4 +1,4 @@
-# Experiment 1 – Compare Virtual Machine (Vagrant) with Container (Docker)
+# Experiment 1 – Comparison of Virtual Machines (VMs) and Containers using Ubuntu and Nginx
 
 
 **Name:** NARAYAN VYAS  
@@ -45,93 +45,103 @@ Docker is used to create and manage containers.
 # 🧪 Procedure
 
 ---
+## Step 1: Install VirtualBox
+- Download VirtualBox from the official website.
+- Run the installer and keep default options.
+- Restart the system if prompted.
 
-## Part A – Virtual Machine using Vagrant
+## Step 2: Install Vagrant
+- Download Vagrant for Windows.
+- Install using default settings.
+- Verify installation:
 
-### Step 1 – Initialize Vagrant project
+## Step 3: Create Ubuntu VM using Vagrant
 ---
+### Create a new directory:
 ```bash
-vagrant init ubuntu/bionic64
+   mkdir vm-lab
+   cd vm-lab
+   
 ````
-### Step 2 – Start VM
 ---
+### Initialize Vagrant with Ubuntu box:
 ```bash
-vagrant up
+   vagrant init ubuntu/jammy64
 ```
-### Step 3 – Connect to VM
 ---
+### Start the VM:
 ```bash
-vagrant ssh
+   vagrant up
 ```
-### Step 4 – Check OS inside VM
 ---
+### Access the VM:
 ```bash
-ls
-uname -a
+   vagrant ssh
 ```
-### Step 5 – Stop VM
 ---
+## Step 4: Install Nginx inside VM
+```bash
+sudo apt update
+sudo apt install -y nginx
+sudo systemctl start nginx
+```
+---
+## Step 5: Verify Nginx
+```bash
+curl localhost
+```
+---
+### Stop and remove vm
 ```bash
 vagrant halt
-```
-### Step 6 – Destroy VM
----
-```bash
 vagrant destroy
 ```
 ---
-### Observations (VM)
-
-- Takes more time to boot
-
-- Uses more RAM and disk space
-
-- Seperate full os required
-
-  ---
- ## Part B – Container using Docker
+ ## Experiment Setup – Part B: Containers using WSL (Windows)
  ---
- ### Step 1 – Check Docker installation
+ ### Step 1: Install WSL 2
  ```bash
-docker --version
+wsl --install
 ```
 ---
-### Step 2 – Run test container
+### Step 2: Install Ubuntu on WSL
 ```bash
-docker run hello-world
+wsl --install -d Ubuntu
 ```
 ---
-### Step 3 – Pull Ubuntu image
+### Step 3: Install Docker Engine inside WSL
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+```
+---
+### Step 4: Run Ubuntu Container with Nginx
 ```bash
 docker pull ubuntu
+
+docker run -d -p 8080:80 --name nginx-container nginx
 ```
 ---
-### Step 4 – Run container interactively
+### Step 5: Verify Nginx in Container
 ```bash
-docker run -it ubuntu bash
+curl localhost:8080
 ```
 ---
-### Step 5 – List running containers
+### Resource Utilization Observation
+VM Observation Commands
 ```bash
-docker ps
+free -h
+htop
+systemd-analyze
 ```
 ---
-### Step 6 – Stop container
+### Container Observation Commands
 ```bash
-docker stop <container_id>
+docker stats
+free -h
 ```
----
-### Observations (Container)
-
-- Starts within seconds
-
-- Lightweight
-
-- Uses less memory
-
-- Shares host OS
-
-- Faster performance
 
 
 
