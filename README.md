@@ -1,6 +1,6 @@
 # Containerization-and-Devops-
 
-# 🚀 Containerization and DevOps Lab
+# Containerization and DevOps Lab
 
 Welcome to my Docker & DevOps Lab experiments repository.
 
@@ -9,17 +9,10 @@ Welcome to my Docker & DevOps Lab experiments repository.
 
 ---
 
-### 🔬 Lab Experiments
+###  Lab Experiments
 👉 [Open Lab Folder](./lab/)
 
-### 📘 Theory Notes
+###  Theory Notes
 👉 [Open Theory Folder](./theory/)
 
 ---
-
-## 📌 About
-This repository contains:
-- Vagrant VM experiments
-- Docker container experiments
-- Theory notes
-- Lab records
