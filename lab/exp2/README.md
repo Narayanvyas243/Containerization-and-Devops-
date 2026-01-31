@@ -40,6 +40,6 @@ docker rmi nginx
 ```
 ---
 ## Result
-```bash
+
 Docker images were successfully pulled, containers executed, and lifecycle commands performed.
-```
+
