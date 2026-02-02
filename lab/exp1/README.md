@@ -142,6 +142,22 @@ systemd-analyze
 docker stats
 free -h
 ```
+# 📸 Experiment Screenshots
+
+![img1](./Screenshot%202026-01-24%20085700.png)
+![img2](./Screenshot%202026-01-24%20085807.png)
+![img3](./Screenshot%202026-01-24%20085930.png)
+![img4](./Screenshot%202026-01-24%20090102.png)
+![img5](./Screenshot%202026-01-24%20090154.png)
+![img6](./Screenshot%202026-01-24%20090753.png)
+![img7](./Screenshot%202026-01-24%20092448.png)
+![img8](./Screenshot%202026-01-24%20092852.png)
+![img9](./Screenshot%202026-01-24%20093005.png)
+![img10](./Screenshot%202026-01-24%20094239.png)
+![img11](./Screenshot%202026-01-24%20094246.png)
+![img12](./Screenshot%202026-01-24%20094506.png)
+![img13](./Screenshot%202026-01-24%20094539.png)
+![img14](./Screenshot%202026-01-24%20094546.png)
 
 
 
