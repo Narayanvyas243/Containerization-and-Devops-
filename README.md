@@ -1,5 +1,3 @@
-# Containerization-and-Devops-
-
 # Containerization and DevOps Lab
 
 Welcome to my Docker & DevOps Lab experiments repository.
