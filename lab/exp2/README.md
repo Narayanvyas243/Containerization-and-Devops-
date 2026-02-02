@@ -45,5 +45,6 @@ Docker images were successfully pulled, containers executed, and lifecycle comma
 
 # 📸 Experiment Screenshots
 
-![img1](./Screenshot 2026-01-31 082355.png)
+![img1](./Screenshot%202026-01-31%20082355.png)
+
 
