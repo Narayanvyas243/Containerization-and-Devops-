@@ -42,4 +42,5 @@ docker rmi nginx
 ## Result
 
 Docker images were successfully pulled, containers executed, and lifecycle commands performed.
+![img1](./)
 
