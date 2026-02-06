@@ -243,26 +243,20 @@ docker compose down
 
 # 📸 Screenshots (Command Outputs)
 
-## Images List
-![Images](./Screenshot%202026-02-06%20113021.png)
 
-## Containers List
-![Containers](./Screenshot%202026-02-06%20113036.png)
+![ss1](./Screenshot%202026-02-06%20113021.png)
 
-## Container Lifecycle
-![Lifecycle](./Screenshot%202026-02-06%20113047.png)
+![ss2](./Screenshot%202026-02-06%20113036.png)
 
-## Exec / Attach Commands
-![Exec](./Screenshot%202026-02-06%20113206.png)
+![ss3](./Screenshot%202026-02-06%20113047.png)
 
-## Networking
-![Network](./Screenshot%202026-02-06%20113215.png)
+![ss4](./Screenshot%202026-02-06%20113206.png)
 
-## Volumes
-![Volumes](./Screenshot%202026-02-06%20113653.png)
+![ss5](./Screenshot%202026-02-06%20113215.png)
 
-## Monitoring / Stats
-![Stats](./Screenshot%202026-02-06%20113825.png)
+![ss6](./Screenshot%202026-02-06%20113653.png)
+
+![ss7](./Screenshot%202026-02-06%20113825.png)
 
 ---
 
