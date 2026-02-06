@@ -1,8 +1,16 @@
 # 🐳 Docker Basic Commands & Flags – Hands On
 
-This unit explains all **basic Docker commands** required for image management, containers, networking, volumes, monitoring, and builds.
+This unit covers all fundamental Docker commands used in containerization and DevOps.
 
-These commands are essential for **Containerization & DevOps labs + exams**.
+It includes:
+- Image Management
+- Container Lifecycle
+- Networking
+- Volumes
+- Logs & Monitoring
+- Build Process
+- Cleanup
+- Docker Compose
 
 ---
 
@@ -12,45 +20,31 @@ These commands are essential for **Containerization & DevOps labs + exams**.
 ```bash
 docker version
 ```
-Shows:
-- Client version
-- Server version
-- Confirms Docker daemon connectivity
+Shows client and server version and confirms Docker daemon connectivity.
 
 ## System Information
 ```bash
 docker info
 ```
-Displays:
-- Storage driver
-- Images
-- Containers
-- CPU / Memory info
+Displays system-wide Docker details like images, containers, drivers, CPU and memory.
 
 ---
 
 # 📌 2. Image Management
 
-## List Local Images
+## List Images
 ```bash
 docker images
 ```
-
 Flags:
-- `-a` → show all images
-- `-q` → only image IDs
+- -a → show all images
+- -q → only image IDs
 
-
----
-
-## Pull Image from Registry
+## Pull Image
 ```bash
 docker pull ubuntu
 docker pull ubuntu:22.04
 ```
-Downloads images from Docker Hub.
-
----
 
 ## Remove Image
 ```bash
@@ -58,8 +52,8 @@ docker rmi ubuntu
 ```
 
 Flags:
-- `-f` → force remove
-- `-a` → remove unused images
+- -f → force removal
+- -a → remove unused images
 
 ---
 
@@ -71,29 +65,20 @@ docker run ubuntu
 ```
 
 Common flags:
-- `-it` → interactive terminal
-- `-d` → detached mode
-- `--name` → custom name
-- `--rm` → auto remove
+- -it → interactive terminal
+- -d → detached mode
+- --name → custom name
+- --rm → auto remove
 
 Example:
 ```bash
 docker run -it --name test ubuntu bash
 ```
 
----
-
 ## List Containers
 ```bash
 docker ps
 ```
-
-Flags:
-- `-a` → all containers
-- `-q` → only IDs
-
-
----
 
 ## Start / Stop / Restart
 ```bash
@@ -102,32 +87,23 @@ docker stop container_name
 docker restart container_name
 ```
 
----
-
 ## Remove Container
 ```bash
 docker rm container_name
 ```
 
-
 ---
 
 # 📌 4. Execute Commands Inside Containers
 
-## Attach Terminal
 ```bash
 docker attach container_name
-```
-
-## Execute Command
-```bash
 docker exec -it container_name bash
 ```
 
 Flags:
-- `-i` → interactive
-- `-t` → terminal
-
+- -i → interactive
+- -t → terminal
 
 ---
 
@@ -137,16 +113,7 @@ Flags:
 ```bash
 docker run -d -p 8080:80 nginx
 ```
-
-Explanation:
-- Host port → 8080
-- Container port → 80
-
-Flags:
-- `-p host:container`
-- `-P` → random ports
-
----
+Host port 8080 → Container port 80
 
 ## List Networks
 ```bash
@@ -157,7 +124,6 @@ docker network ls
 ```bash
 docker network create mynet
 ```
-
 
 ---
 
@@ -178,11 +144,10 @@ Bind mount:
 docker run -v /host/path:/container/path ubuntu
 ```
 
-Read only:
+Read-only:
 ```bash
 docker run -v mydata:/data:ro ubuntu
 ```
-
 
 ---
 
@@ -193,57 +158,30 @@ docker run -v mydata:/data:ro ubuntu
 docker logs container_name
 ```
 
-Flags:
-- `-f` → follow live
-- `--tail 50`
-- `--since 10m`
-
----
-
 ## Resource Usage
 ```bash
 docker stats
 ```
-
-Shows:
-- CPU
-- Memory
-- Network I/O
-- Disk I/O
-
+Shows CPU, Memory, Network and Disk usage.
 
 ---
 
 # 📌 8. Inspect & Metadata
 
-## Inspect Object
 ```bash
 docker inspect container_name
 ```
-
-Returns:
-- IP address
-- Mounts
-- Environment variables
-- Network configuration (JSON)
+Returns configuration details in JSON format.
 
 ---
 
 # 📌 9. Docker Build (Images)
 
-## Build Image
 ```bash
 docker build -t myapp .
 ```
 
-Flags:
-- `-t` → tag
-- `-f` → custom Dockerfile
-- `--no-cache`
-
----
-
-## Example Dockerfile
+Example Dockerfile:
 ```dockerfile
 FROM ubuntu:22.04
 RUN apt update && apt install -y nginx
@@ -254,24 +192,15 @@ CMD ["nginx", "-g", "daemon off;"]
 
 # 📌 10. Cleanup Commands
 
-## Remove unused containers
 ```bash
 docker container prune
-```
-
-## Remove unused images
-```bash
 docker image prune
-```
-
-## Remove everything unused
-```bash
 docker system prune -a --volumes
 ```
 
 ---
 
-# 📌 11. Docker Compose (Overview)
+# 📌 11. Docker Compose
 
 Start services:
 ```bash
@@ -285,10 +214,10 @@ docker compose down
 
 ---
 
-# 📌 12. Important Run Flags (Quick Reference)
+# 📌 12. Important Run Flags
 
 | Flag | Meaning |
-|--------|------------|
+|--------|----------------|
 | -it | Interactive terminal |
 | -d | Detached mode |
 | --rm | Auto remove |
@@ -297,45 +226,47 @@ docker compose down
 | -v | Volume mount |
 | -e | Environment variable |
 | --network | Custom network |
-| --restart=always | Auto restart |
 
 ---
 
-# 📌 13. Minimal Lab Example (Ubuntu + Nginx)
-
-```bash
-docker pull nginx
-docker run -d --name web -p 8080:80 nginx
-docker ps
-docker logs web
-docker stop web
-docker rm web
-```
-
----
-
-# 📌 14. Key Concepts Summary
+# 📌 13. Key Concepts Summary
 
 | Term | Meaning |
-|-----------|-----------------------|
-| Image | Blueprint/template |
+|-----------|----------------|
+| Image | Blueprint |
 | Container | Running instance |
 | Volume | Persistent storage |
-| Network | Container communication |
-| Dockerfile | Image build instructions |
+| Network | Communication |
+| Dockerfile | Build instructions |
+
+---
+
+# 📸 Screenshots (Command Outputs)
+
+## Images List
+![ss1](./Screenshot 2026-02-06 113021.png)
+
+## Containers List
+![ss2](./Screenshot 2026-02-06 113036.png)
+
+## Container Lifecycle
+![ss3](./Screenshot 2026-02-06 113047.png)
+
+## Exec / Attach Commands
+![ss4](./Screenshot 2026-02-06 113206.png)
+
+## Networking
+![ss5](./Screenshot 2026-02-06 113215.png)
+
+## Volumes
+![ss6](./Screenshot 2026-02-06 113653.png)
+
+## Monitoring / Stats
+![ss7](./Screenshot 2026-02-06 113825.png)
 
 ---
 
 # ✅ Conclusion
 
-This lab covered:
-✔ Image management  
-✔ Container lifecycle  
-✔ Networking  
-✔ Volumes  
-✔ Logs & monitoring  
-✔ Build process  
-✔ Cleanup  
-
-These are the **core Docker commands every DevOps engineer must know**.
-
+All basic Docker commands were practiced and verified using terminal outputs.  
+This forms the foundation of Containerization and DevOps workflows.
