@@ -40,8 +40,6 @@ Flags:
 - `-a` → show all images
 - `-q` → only image IDs
 
-📸 Screenshot  
-![Images](./Screenshot 2026-02-06 113021.png)
 
 ---
 
@@ -94,8 +92,6 @@ Flags:
 - `-a` → all containers
 - `-q` → only IDs
 
-📸 Screenshot  
-![Containers](./Screenshot 2026-02-06 113036.png)
 
 ---
 
@@ -113,8 +109,6 @@ docker restart container_name
 docker rm container_name
 ```
 
-📸 Screenshot  
-![Lifecycle](./Screenshot 2026-02-06 113047.png)
 
 ---
 
@@ -134,8 +128,6 @@ Flags:
 - `-i` → interactive
 - `-t` → terminal
 
-📸 Screenshot  
-![Exec](./Screenshot 2026-02-06 113206.png)
 
 ---
 
@@ -166,8 +158,6 @@ docker network ls
 docker network create mynet
 ```
 
-📸 Screenshot  
-![Network](./Screenshot 2026-02-06 113215.png)
 
 ---
 
@@ -193,8 +183,6 @@ Read only:
 docker run -v mydata:/data:ro ubuntu
 ```
 
-📸 Screenshot  
-![Volumes](./Screenshot 2026-02-06 113653.png)
 
 ---
 
@@ -223,8 +211,6 @@ Shows:
 - Network I/O
 - Disk I/O
 
-📸 Screenshot  
-![Stats](./Screenshot 2026-02-06 113825.png)
 
 ---
 
