@@ -51,7 +51,7 @@ Flags:
 docker pull ubuntu
 docker pull ubuntu:22.04
 ```
-![ss5](./Screenshot%202026-02-06%20113215.png)
+
 
 ## Remove Image
 ```bash
@@ -94,6 +94,7 @@ docker start container_name
 docker stop container_name
 docker restart container_name
 ```
+![ss5](./Screenshot%202026-02-06%20113215.png)
 
 ## Remove Container
 ```bash
