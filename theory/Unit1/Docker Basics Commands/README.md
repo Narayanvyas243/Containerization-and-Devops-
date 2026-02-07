@@ -51,7 +51,7 @@ Flags:
 docker pull ubuntu
 docker pull ubuntu:22.04
 ```
-![ss4](./Screenshot%202026-02-06%20113206.png)
+![ss5](./Screenshot%202026-02-06%20113215.png)
 
 ## Remove Image
 ```bash
@@ -70,7 +70,7 @@ Flags:
 ```bash
 docker run ubuntu
 ```
-![ss5](./Screenshot%202026-02-06%20113215.png)
+![ss4](./Screenshot%202026-02-06%20113206.png)
 
 Common flags:
 - -it → interactive terminal
