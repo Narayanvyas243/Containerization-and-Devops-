@@ -20,12 +20,16 @@ It includes:
 ```bash
 docker version
 ```
+![ss1](./Screenshot%202026-02-06%20113021.png)
+
 Shows client and server version and confirms Docker daemon connectivity.
 
 ## System Information
 ```bash
 docker info
 ```
+![ss2](./Screenshot%202026-02-06%20113036.png)
+
 Displays system-wide Docker details like images, containers, drivers, CPU and memory.
 
 ---
@@ -36,6 +40,8 @@ Displays system-wide Docker details like images, containers, drivers, CPU and me
 ```bash
 docker images
 ```
+![ss3](./Screenshot%202026-02-06%20113047.png)
+
 Flags:
 - -a → show all images
 - -q → only image IDs
@@ -45,6 +51,7 @@ Flags:
 docker pull ubuntu
 docker pull ubuntu:22.04
 ```
+![ss4](./Screenshot%202026-02-06%20113206.png)
 
 ## Remove Image
 ```bash
@@ -63,6 +70,7 @@ Flags:
 ```bash
 docker run ubuntu
 ```
+![ss5](./Screenshot%202026-02-06%20113215.png)
 
 Common flags:
 - -it → interactive terminal
@@ -119,6 +127,7 @@ Host port 8080 → Container port 80
 ```bash
 docker network ls
 ```
+![ss6](./Screenshot%202026-02-06%20113653.png)
 
 ## Create Network
 ```bash
