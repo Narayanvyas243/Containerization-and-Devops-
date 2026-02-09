@@ -55,7 +55,7 @@ Verify:
 ```bash
 javac --version
 ```
-![Screenshot 2](Screenshot2026-02-09110209.png)
+![Screenshot 2](Screenshot%202026-02-09%20110209.png)
 
 Now Java is installed inside container.
 
@@ -100,6 +100,7 @@ Output:
 ```
 Hello from Docker container!
 ```
+![Screenshot 3](Screenshot%202026-02-09%20110345.png)
 
 Container now contains:
 ✔ Java installed  
@@ -136,6 +137,7 @@ Verify:
 ```bash
 docker images
 ```
+![Screenshot 4](Screenshot%202026-02-09%20110319.png)
 
 ---
 
@@ -269,13 +271,5 @@ Share offline → docker save/load
 
 ---
 
-# 📸 Screenshots (Add later)
-
-
-```markdown
-![Step1](./screenshots/step1.png)
-![Step2](./screenshots/step2.png)
-![Step3](./screenshots/step3.png)
-```
 
 
