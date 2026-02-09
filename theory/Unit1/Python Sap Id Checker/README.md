@@ -24,7 +24,7 @@ sapid-checker/
 ├── Dockerfile
 └── README.md
 ```
-
+![Screenshot 1](Screenshot%202026-02-09%20153948.png)
 ---
 
 ## Python Program (app.py)
@@ -39,7 +39,7 @@ if user_sapid == "500122747":
 else:
     print("Invalid SAP ID")
 ```
-
+![Screenshot 2](Screenshot%202026-02-09%20154058.png)
 ---
 
 ## Dockerfile
@@ -53,7 +53,7 @@ COPY app.py .
 
 CMD ["python", "app.py"]
 ```
-
+![Screenshot 4](Screenshot%202026-02-09%20154256.png)
 ---
 
 ## Build Docker Image
@@ -63,6 +63,7 @@ Run inside project folder:
 ```
 docker build -t sapid-checker:500122747 .
 ```
+![Screenshot 5](Screenshot%202026-02-09%20154721.png)
 
 Explanation:
 
@@ -101,7 +102,7 @@ docker run -it sapid-checker:500122747
 Enter your SAP ID: 500122747
 Valid SAP ID
 ```
-
+![Screenshot 6](Screenshot%202026-02-09%20154913.png)
 ---
 
 ## Why -it is Required
