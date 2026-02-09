@@ -184,6 +184,7 @@ From the project directory:
 ```
 docker build -t java-app:1.0 .
 ```
+![Screenshot 2](Screenshot%202026-02-09%20125236.png)
 
 Explanation:
 
@@ -195,7 +196,7 @@ Check images:
 ```
 docker images
 ```
-
+![Screenshot 3](Screenshot%202026-02-09%20125854.png)
 ---
 
 # Run Container
@@ -203,6 +204,7 @@ docker images
 ```
 docker run java-app:1.0
 ```
+![Screenshot 4](Screenshot%202026-02-09%20125918.png)
 
 Output:
 
@@ -217,6 +219,7 @@ Hello from Dockerfile automation
 ```
 docker run -it java-app:1.0 bash
 ```
+![Screenshot 5](Screenshot%202026-02-09%20125954.png)
 
 CMD gets replaced by `bash`.
 
@@ -234,6 +237,7 @@ COPY Hello.java
 RUN javac Hello.java
 CMD java Hello
 ```
+![Screenshot 10](Screenshot%202026-02-09%20150832.png)
 
 Benefits:
 
@@ -251,6 +255,7 @@ After modifying Hello.java:
 ```
 docker build -t java-app:1.1 .
 ```
+![Screenshot 6](Screenshot%202026-02-09%20130055.png)
 
 Only layers after COPY are rebuilt.
 
@@ -263,12 +268,14 @@ Tag:
 ```
 docker tag java-app:1.0 username/java-app:1.0
 ```
+![Screenshot 7](Screenshot%202026-02-09%20130259.png)
 
 Push:
 
 ```
 docker push username/java-app:1.0
 ```
+![Screenshot 8](Screenshot%202026-02-09%20130410.png)
 
 Pull anywhere:
 
@@ -276,7 +283,7 @@ Pull anywhere:
 docker pull username/java-app:1.0
 docker run username/java-app:1.0
 ```
-
+![Screenshot 9](Screenshot%202026-02-09%20150641.png)
 ---
 
 # Dockerfile vs docker commit
@@ -315,12 +322,14 @@ Run:
 ```
 docker run myimage
 ```
+![Screenshot 13](Screenshot%202026-02-09%20150942.png)
 
 Override:
 
 ```
 docker run myimage echo "Hi"
 ```
+![Screenshot 14](Screenshot%202026-02-09%20151011.png)
 
 CMD is replaced.
 
