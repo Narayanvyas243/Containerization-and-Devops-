@@ -29,6 +29,10 @@ Goal:
 ```bash
 docker run -it --name java_lab ubuntu:22.04 bash
 ```
+## 📸 Screenshots
+
+![Screenshot 1](Screenshot%202026-02-09%20110202.png)
+
 
 Explanation:
 - `-it` → interactive terminal
@@ -51,6 +55,7 @@ Verify:
 ```bash
 javac --version
 ```
+![Screenshot 2](Screenshot2026-02-09110209.png)
 
 Now Java is installed inside container.
 
