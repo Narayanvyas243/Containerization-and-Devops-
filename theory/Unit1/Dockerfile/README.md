@@ -144,7 +144,7 @@ java-docker/
 ├── Dockerfile
 └── Hello.java
 ```
-
+![Screenshot 1](Screenshot%202026-02-09%20124808.png)
 ---
 
 ## Hello.java
