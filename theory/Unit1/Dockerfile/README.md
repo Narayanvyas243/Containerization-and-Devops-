@@ -359,7 +359,7 @@ FROM ubuntu
 ENTRYPOINT ["echo"]
 CMD ["Hello World"]
 ```
-
+![Screenshot 15](Screenshot 2026-02-09 152805.png)
 Behavior:
 
 ```
