@@ -198,6 +198,7 @@ Image restored successfully.
 ```bash
 docker export java_lab > container.tar
 ```
+![Screenshot 5](Screenshot%202026-02-09%20110410.png)
 
 Exports:
 ✔ filesystem only
