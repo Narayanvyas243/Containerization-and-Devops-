@@ -12,7 +12,7 @@ You will learn:
 
 ---
 
-# 📌 Scenario Overview
+# Scenario Overview
 
 Goal:
 
@@ -24,7 +24,7 @@ Goal:
 
 ---
 
-# 🚀 Step 1 – Run Base Ubuntu Container
+#  Step 1 – Run Base Ubuntu Container
 
 ```bash
 docker run -it --name java_lab ubuntu:22.04 bash
@@ -39,7 +39,7 @@ Now you are **inside the container**.
 
 ---
 
-# 🚀 Step 2 – Install Java Compiler (Inside Container)
+#  Step 2 – Install Java Compiler (Inside Container)
 
 ```bash
 apt update
@@ -56,7 +56,7 @@ Now Java is installed inside container.
 
 ---
 
-# 🚀 Step 3 – Create Java App in /home/app
+#  Step 3 – Create Java App in /home/app
 
 ```bash
 mkdir -p /home/app
@@ -116,7 +116,7 @@ Changes are **not lost**, they remain inside the stopped container.
 
 ---
 
-# 🚀 Step 5 – Convert Container → Image (docker commit)
+#  Step 5 – Convert Container → Image (docker commit)
 
 ```bash
 docker commit java_lab myrepo/java-app:1.0
@@ -134,7 +134,7 @@ docker images
 
 ---
 
-# 🚀 Step 6 – Reuse the Image
+#  Step 6 – Reuse the Image
 
 Run new container:
 
@@ -149,11 +149,11 @@ cd /home/app
 java Hello
 ```
 
-Java and program already exist 🎉
+Java and program already exist 
 
 ---
 
-# 🚀 Step 7 – Save / Load (Offline Transfer)
+#  Step 7 – Save / Load (Offline Transfer)
 
 ## Save image
 ```bash
@@ -229,7 +229,7 @@ Preserves:
 
 ---
 
-# ✅ Best Practice (Production Method)
+#  Best Practice (Production Method)
 
 Instead of `docker commit`, use **Dockerfile**.
 
@@ -266,7 +266,6 @@ Share offline → docker save/load
 
 # 📸 Screenshots (Add later)
 
-You can add screenshots here:
 
 ```markdown
 ![Step1](./screenshots/step1.png)
@@ -274,5 +273,4 @@ You can add screenshots here:
 ![Step3](./screenshots/step3.png)
 ```
 
-(Add images later inside a screenshots folder)
 
