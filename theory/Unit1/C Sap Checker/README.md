@@ -48,7 +48,7 @@ int main() {
     return 0;
 }
 ```
-
+![](Screenshot%202026-02-09%20170852.png)
 ---
 
 ## Dockerfile
@@ -64,7 +64,7 @@ RUN gcc main.c -o sapid_checker
 
 CMD ["./sapid_checker"]
 ```
-
+![](Screenshot%202026-02-09%20172004.png)
 ---
 
 ## Build Docker Image
@@ -154,6 +154,7 @@ Run:
 ```
 docker run -it c-sapid-checker:1.0
 ```
+![](Screenshot%202026-02-09%20171057.png)
 
 List images:
 
@@ -181,15 +182,6 @@ docker rmi c-sapid-checker:1.0
 - CMD instruction
 - Docker build
 - Docker run
-
----
-
-## Screenshots
-
-| | |
-|---|---|
-| ![](Screenshot%202026-02-09%20170833.png) | ![](Screenshot%202026-02-09%20170852.png) |
-| ![](Screenshot%202026-02-09%20171057.png) | |
 
 ---
 
