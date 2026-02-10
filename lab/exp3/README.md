@@ -51,6 +51,7 @@ docker pull nginx:latest
 ```
 docker run -d --name nginx-official -p 8080:80 nginx
 ```
+![Screenshot 1](Screenshot%202026-02-10%20011515.png)
 
 ## Verify
 
@@ -59,6 +60,7 @@ Open browser:
 ```
 http://localhost:8080
 ```
+![Screenshot 2](Screenshot%202026-02-10%20011604.png)
 
 You should see the NGINX welcome page.
 
@@ -69,6 +71,7 @@ You should see the NGINX welcome page.
 ```
 docker images nginx
 ```
+![Screenshot 3](Screenshot%202026-02-10%20011632.png)
 
 - Pre-optimized image
 - Minimal setup required
@@ -93,6 +96,7 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
+![Screenshot 4](Screenshot%202026-02-10%20011720.png)
 
 ## Build image
 
@@ -105,7 +109,7 @@ docker build -t nginx-ubuntu .
 ```
 docker run -d --name nginx-ubuntu -p 8081:80 nginx-ubuntu
 ```
-
+![Screenshot 5](Screenshot%202026-02-10%20011935.png)
 ---
 
 ## Observations
@@ -134,19 +138,21 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
+![Screenshot 6](Screenshot%202026-02-10%20012053.png)
 
 ## Build image
 
 ```
 docker build -t nginx-alpine .
 ```
+![Screenshot 7](Screenshot%202026-02-10%20012135.png)
 
 ## Run container
 
 ```
 docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 ```
-
+![Screenshot 8](Screenshot%202026-02-10%20012211.png)
 ---
 
 ## Observations
@@ -170,6 +176,7 @@ docker images nginx-alpine
 ```
 docker images
 ```
+![Screenshot 9](Screenshot%202026-02-10%20012645.png)
 
 Typical result:
 
@@ -188,6 +195,7 @@ docker history nginx
 docker history nginx-ubuntu
 docker history nginx-alpine
 ```
+![Screenshot 10](Screenshot%202026-02-10%20012324.png)
 
 Observations:
 
