@@ -176,7 +176,7 @@ docker images nginx-alpine
 ```
 docker images
 ```
-![Screenshot 9](Screenshot%202026-02-10%20012645.png)
+![Screenshot 9](Screenshot%202026-02-10%20133122.png)
 
 Typical result:
 
