@@ -130,7 +130,8 @@ CMD ["./hello"]
 ```
 docker build -f Dockerfile.single -t c-app:single .
 ```
-
+![Step 1](Screenshot%202026-02-10%20153738.png)
+![Step 2](Screenshot%202026-02-10%20174756.png)
 ### Problem
 
 - Includes Ubuntu
@@ -162,7 +163,8 @@ COPY --from=builder /hello /hello
 
 CMD ["/hello"]
 ```
-
+![Step 4](Screenshot%202026-02-10%20175041.png)
+![Step 5](Screenshot%202026-02-10%20175105.png)
 ### Build
 
 ```
@@ -182,6 +184,7 @@ Image size reduces from:
 ```
 docker images
 ```
+![Step 3](Screenshot%202026-02-10%20175029.png)
 
 Typical output:
 
@@ -212,7 +215,7 @@ Multistage:
 ---
 
 # Java Program Example
-
+![Step 6](Screenshot%202026-02-11%20010120.png)
 ## Single-stage (Problem)
 
 ```
@@ -223,6 +226,7 @@ COPY src ./src
 RUN mvn clean package
 CMD ["java","-jar","target/app.jar"]
 ```
+![Step 10](Screenshot%202026-02-11%20010717.png)
 
 Issues:
 - Maven included
@@ -252,7 +256,9 @@ USER myuser
 
 CMD ["java","-jar","app.jar"]
 ```
-
+![Step 9](Screenshot%202026-02-11%20010706.png)
+![Step 11](Screenshot%202026-02-11%20010729.png)
+![Step 12](Screenshot%202026-02-11%20010745.png)
 Benefits:
 
 - Smaller image
@@ -304,12 +310,13 @@ Build single-stage:
 ```
 docker build -f Dockerfile.single -t c-app:single .
 ```
-
+![Step 7](Screenshot%202026-02-11%20010531.png)
 Build multistage:
 
 ```
 docker build -f Dockerfile.multi -t c-app:multi .
 ```
+![Step 13](Screenshot%202026-02-11%20011441.png)
 
 Run:
 
@@ -317,6 +324,8 @@ Run:
 docker run c-app:single
 docker run c-app:multi
 ```
+![Step 8](Screenshot%202026-02-11%20010608.png)
+![Step 14](Screenshot%202026-02-11%20011503.png)
 
 Inspect:
 
@@ -324,7 +333,7 @@ Inspect:
 docker images
 docker history image_name
 ```
-
+![Step 15](Screenshot%202026-02-11%20011611.png)
 ---
 
 # Learning Outcomes
