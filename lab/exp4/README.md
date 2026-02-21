@@ -17,6 +17,8 @@ This experiment demonstrates:
 
 # 📦 Part 1: Python Flask Application
 
+![Screenshot](Screenshot%202026-02-20%20102415.png)
+
 ## 📁 Project Structure
 
 ```
@@ -47,19 +49,21 @@ def health():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
+![Screenshot](Screenshot%202026-02-20%20102442.png)
 
 ---
 
 ## 📄 requirements.txt
-
+![Screenshot](Screenshot%202026-02-20%20102556.png)
 ```
 Flask==2.3.3
 ```
+![Screenshot](Screenshot%202026-02-20%20102603.png)
 
 ---
 
 ## 🐳 Dockerfile
-
+![Screenshot](Screenshot%202026-02-20%20102637.png)
 ```dockerfile
 # Use Python base image
 FROM python:3.9-slim
@@ -82,13 +86,14 @@ EXPOSE 5000
 # Run the application
 CMD ["python", "app.py"]
 ```
+![Screenshot](Screenshot%202026-02-20%20102937.png)
 
 ---
 
 # 📂 Part 2: .dockerignore
 
 ## 📄 .dockerignore
-
+![Screenshot](Screenshot%202026-02-20%20103058.png)
 ```
 __pycache__/
 *.pyc
@@ -115,7 +120,7 @@ logs/
 tests/
 test_*.py
 ```
-
+![Screenshot](Screenshot%202026-02-20%20103119.png)
 ### Why use .dockerignore?
 
 - Reduces image size  
@@ -132,30 +137,32 @@ test_*.py
 ```bash
 docker build -t my-flask-app .
 ```
-
+![Screenshot](Screenshot%202026-02-20%20103307.png)
 ## Build with Version Tag
 
 ```bash
 docker build -t my-flask-app:1.0 .
 ```
-
+![Screenshot](Screenshot%202026-02-20%20103504.png)
 ## Multiple Tags
 
 ```bash
 docker build -t my-flask-app:latest -t my-flask-app:1.0 .
 ```
-
+![Screenshot](Screenshot%202026-02-20%20103536.png)
 ## View Images
 
 ```bash
 docker images
 ```
-
+![Screenshot](Screenshot%202026-02-20%20103345.png)
 ## Inspect Image
 
 ```bash
 docker inspect my-flask-app
 ```
+![Screenshot](Screenshot%202026-02-20%20103821.png)
+![Screenshot](Screenshot%202026-02-20%20110739.png)
 
 ---
 
@@ -166,25 +173,25 @@ docker inspect my-flask-app
 ```bash
 docker run -d -p 5000:5000 --name flask-container my-flask-app
 ```
-
+![Screenshot](Screenshot%202026-02-20%20110820.png)
 ## Test Application
-
+![Screenshot](Screenshot%202026-02-20%20110853.png)
 ```bash
 curl http://localhost:5000
 ```
-
+![Screenshot](Screenshot%202026-02-20%20110950.png)
 ## View Running Containers
 
 ```bash
 docker ps
 ```
-
+![Screenshot](Screenshot%202026-02-20%20111017.png)
 ## View Logs
 
 ```bash
 docker logs flask-container
 ```
-
+![Screenshot](Screenshot%202026-02-20%20111052.png)
 ## Stop Container
 
 ```bash
@@ -202,11 +209,12 @@ docker rm flask-container
 ```bash
 docker rm -f flask-container
 ```
+![Screenshot](Screenshot%202026-02-20%20111139.png)
 
 ---
 
 # 🏗 Part 5: Multi-stage Build
-
+![Screenshot](Screenshot%202026-02-20%20111253.png)
 ## 📄 Dockerfile.multistage
 
 ```dockerfile
@@ -244,6 +252,49 @@ CMD ["python", "app.py"]
 ```bash
 docker build -f Dockerfile.multistage -t flask-multistage .
 ```
+
+---
+#  Single-Stage Dockerfile
+
+```
+# Use official Python base image
+FROM python:3.9-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application source code
+COPY app.py .
+
+# Expose application port
+EXPOSE 5000
+
+# Start the Flask application
+CMD ["python", "app.py"]
+```
+![Screenshot](Screenshot%202026-02-20%20220019.png)
+---
+
+# 🏗 Step 3: Build Docker Image
+
+```
+docker build -t flask-single-stage .
+```
+![Screenshot](Screenshot%202026-02-20%20220026.png)
+
+# 📊 Image Size Check
+
+```
+docker images | grep flask
+```
+![Screenshot](Screenshot%202026-02-20%20220045.png)
+![Screenshot](Screenshot%202026-02-20%20220123.png)
 
 ---
 
