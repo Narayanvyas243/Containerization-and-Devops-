@@ -319,23 +319,27 @@ docker tag my-flask-app:latest username/my-flask-app:latest
 docker push username/my-flask-app:1.0
 docker push username/my-flask-app:latest
 ```
+![Screenshot](Screenshot%202026-02-20%20221916.png)
 
 ## Pull on Another Machine
 
 ```bash
 docker pull username/my-flask-app:latest
 ```
+![WhatsApp](WhatsApp%20Image%202026-02-20%20at%2010.41.56%20PM.jpeg)
 
 ## Run Pulled Image
 
 ```bash
 docker run -d -p 5000:5000 username/my-flask-app:latest
 ```
+![WhatsApp](WhatsApp%20Image%202026-02-20%20at%2010.41.57%20PM%20(1).jpeg)
+![WhatsApp](WhatsApp%20Image%202026-02-20%20at%2010.41.57%20PM.jpeg)
 
 ---
 
 # 🟢 Part 7: Node.js Example
-
+![Screenshot](Screenshot%202026-02-20%20224556.png)
 ## 📁 Project Structure
 
 ```
@@ -382,11 +386,12 @@ app.listen(port, () => {
   }
 }
 ```
+![Screenshot](Screenshot%202026-02-20%20224630.png)
 
 ---
 
 ## 🐳 Node.js Dockerfile
-
+![Screenshot](Screenshot%202026-02-20%20224723.png)
 ```dockerfile
 FROM node:18-alpine
 
@@ -408,12 +413,15 @@ CMD ["node", "app.js"]
 docker build -t my-node-app .
 docker run -d -p 3000:3000 --name node-container my-node-app
 ```
-
+![Screenshot](Screenshot%202026-02-20%20225006.png)
+![Screenshot](Screenshot%202026-02-20%20225029.png)
 ## Test
 
 ```bash
 curl http://localhost:3000
 ```
+![Screenshot](Screenshot%202026-02-20%20225105.png)
+![Screenshot](Screenshot%202026-02-20%20225235.png)
 
 ---
 
