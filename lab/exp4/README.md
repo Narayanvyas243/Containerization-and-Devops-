@@ -1,4 +1,4 @@
-# 🐳 Experiment 4: Docker Essentials
+#  Experiment 4: Docker Essentials
 
 ## 📌 Objective
 
@@ -15,7 +15,7 @@ This experiment demonstrates:
 
 ---
 
-# 📦 Part 1: Python Flask Application
+#  Part 1: Python Flask Application
 
 ![Screenshot](Screenshot%202026-02-20%20102415.png)
 
@@ -62,7 +62,7 @@ Flask==2.3.3
 
 ---
 
-## 🐳 Dockerfile
+##  Dockerfile
 ![Screenshot](Screenshot%202026-02-20%20102637.png)
 ```dockerfile
 # Use Python base image
@@ -166,7 +166,7 @@ docker inspect my-flask-app
 
 ---
 
-# 🚀 Part 4: Running Containers
+#  Part 4: Running Containers
 
 ## Run Container
 
@@ -298,7 +298,7 @@ docker images | grep flask
 
 ---
 
-# 🌍 Part 6: Publishing to Docker Hub
+#  Part 6: Publishing to Docker Hub
 
 ## Login
 
@@ -338,7 +338,7 @@ docker run -d -p 5000:5000 username/my-flask-app:latest
 
 ---
 
-# 🟢 Part 7: Node.js Example
+#  Part 7: Node.js Example
 ![Screenshot](Screenshot%202026-02-20%20224556.png)
 ## 📁 Project Structure
 
@@ -465,7 +465,7 @@ docker system prune -a
 
 ---
 
-# ✅ Key Takeaways
+#  Key Takeaways
 
 - Dockerfile defines image creation
 - .dockerignore improves security and performance
@@ -473,13 +473,5 @@ docker system prune -a
 - Tagging helps version control
 - Docker Hub enables image distribution
 - Always test locally before publishing
-
----
-
-# 👨‍🏫 Instructor
-
-Designed by **Dr. Prateek Raj Gautam**  
-Course: Containerization and DevOps Lab  
-Platform: mGeek.in
 
 ---
