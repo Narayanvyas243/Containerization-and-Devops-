@@ -28,6 +28,7 @@ docker start test-container
 docker exec test-container cat /data/message.txt
 #  Data lost
 ```
+![Screenshot](./Screenshot%202026-03-18%20004246.png)**
 
 ---
 
@@ -40,6 +41,7 @@ docker run -d -v /app/data --name web1 nginx
 docker volume ls
 docker inspect web1
 ```
+![Screenshot](./Screenshot%202026-03-20%20110925.png)
 
 ---
 
@@ -67,6 +69,7 @@ echo "From Host" > ~/myapp-data/host-file.txt
 
 docker exec web3 cat /app/data/host-file.txt
 ```
+![Screenshot](./Screenshot%202026-03-20%20110943.png)
 
 ---
 
@@ -88,6 +91,8 @@ docker run -d \
   -e MYSQL_ROOT_PASSWORD=secret \
   mysql:8.0
 ```
+![Screenshot](./Screenshot%202026-03-20%20112924.png)
+![Screenshot](./Screenshot%202026-03-20%20113458.png)
 
 ---
 
@@ -152,6 +157,8 @@ echo "API_KEY=secret123" >> .env
 
 docker run -d --env-file .env --name app2 my-app
 ```
+![Screenshot](./Screenshot%202026-03-20%20113641.png)
+![Screenshot](./Screenshot%202026-03-20%20114015.png)
 
 ---
 
@@ -235,6 +242,7 @@ curl http://localhost:5000/config
 docker stats
 docker stats --no-stream
 ```
+![Screenshot](./Screenshot%202026-03-20%20114142.png)
 
 ---
 
@@ -243,6 +251,7 @@ docker stats --no-stream
 ```bash
 docker top container-name
 ```
+![Screenshot](./Screenshot%202026-03-20%20114300.png)
 
 ---
 
@@ -253,6 +262,7 @@ docker logs container-name
 docker logs -f container-name
 docker logs --tail 50 container-name
 ```
+![Screenshot](./Screenshot%202026-03-20%20114326.png)
 
 ---
 
@@ -262,6 +272,7 @@ docker logs --tail 50 container-name
 docker inspect container-name
 docker inspect --format='{{.State.Status}}' container-name
 ```
+![Screenshot](./Screenshot%202026-03-20%20114350.png)
 
 ---
 
@@ -271,6 +282,8 @@ docker inspect --format='{{.State.Status}}' container-name
 docker events
 docker events --filter 'event=start'
 ```
+![Screenshot](./Screenshot%202026-03-20%20114416.png)
+![Screenshot](./Screenshot%202026-03-20%20114431.png)
 
 ---
 
@@ -295,6 +308,7 @@ docker system df
 ```bash
 docker network ls
 ```
+![Screenshot](./Screenshot%202026-03-20%20114915.png)
 
 ---
 
@@ -308,6 +322,7 @@ docker run -d --name web2 --network my-network nginx
 
 docker exec web1 curl http://web2
 ```
+![Screenshot](./Screenshot%202026-03-20%20114945.png)
 
 ---
 
@@ -316,6 +331,8 @@ docker exec web1 curl http://web2
 ```bash
 docker run -d --network host nginx
 ```
+![Screenshot](./Screenshot%202026-03-20%20115210.png)
+![Screenshot](./Screenshot%202026-03-20%20115254.png)
 
 ---
 
@@ -336,6 +353,7 @@ docker network disconnect app-network container
 docker network rm app-network
 docker network prune
 ```
+![Screenshot](./Screenshot%202026-03-20%20115814.png)
 
 ---
 
@@ -358,6 +376,8 @@ docker run -d \
   -e DATABASE_URL="postgres://postgres:secret@postgres-db:5432/mydb" \
   node-app
 ```
+![Screenshot](./Screenshot%202026-03-20%20121500.png)
+![Screenshot](./Screenshot%202026-03-20%20121511.png)
 
 ---
 
