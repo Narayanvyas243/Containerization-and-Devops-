@@ -3,7 +3,7 @@
 
 Welcome to Containerization and DevOps Theory section.
 
-## 📚 Units
+## Theory
 
-[Unit 1 ](./Unit1)
+[Theory Files ](./Unit1)
 
