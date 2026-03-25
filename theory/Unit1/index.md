@@ -1,6 +1,6 @@
 # Theory files
 
-This unit covers all basic Docker concepts and commands.
+This section covers all basic Docker concepts and commands.
 
 ##  Topics
 
