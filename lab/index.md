@@ -9,6 +9,7 @@ Welcome to my Containerization and DevOps Lab.
 - 👉 [Experiment 3 – Deploying NGINX Using Different Base Images and Comparing Image Layers](./exp3/)
 - 👉 [Experiment 4 – Docker Essentials](./exp4/)
 - 👉 [Experiment 5 – Docker Volumes](./exp5/)
+- 👉 [Experiment 6 – Docker Run vs Docker Compose](./exp6/)
 
 
 
