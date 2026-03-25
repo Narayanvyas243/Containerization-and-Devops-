@@ -23,6 +23,7 @@ To understand the difference between `docker run` (imperative approach) and `Doc
 ```bash
 docker run -d --name my-nginx -p 8080:80 nginx:alpine
 ```
+![Screenshot%201](Screenshot%202026-03-25%20011115.png)
 
 ---
 
@@ -71,6 +72,8 @@ mkdir html
 echo Hello Docker > html/index.html
 ```
 
+![Screenshot%202](Screenshot%202026-03-25%20011124.png)
+
 ---
 
 ### 🔹 Using Docker Run
@@ -78,12 +81,14 @@ echo Hello Docker > html/index.html
 ```bash
 docker run -d --name lab-nginx -p 8081:80 -v ${PWD}/html:/usr/share/nginx/html nginx:alpine
 ```
+![Screenshot%204](Screenshot%202026-03-25%20012551.png)
 
 Verify:
 
 ```bash
 docker ps
 ```
+![Screenshot%205](Screenshot%202026-03-25%20012559.png)
 
 Access:
 
@@ -116,18 +121,22 @@ services:
     volumes:
       - ./html:/usr/share/nginx/html
 ```
+![Screenshot%203](Screenshot%202026-03-25%20012232.png)
 
 Run:
 
 ```bash
 docker compose up -d
 ```
+![Screenshot%206](Screenshot%202026-03-25%20012705.png)
 
 Stop:
 
 ```bash
 docker compose down
 ```
+![Screenshot%207](Screenshot%202026-03-25%20012717.png)
+![Screenshot%208](Screenshot%202026-03-25%20012734.png)
 
 ---
 
@@ -140,6 +149,7 @@ Create network:
 ```bash
 docker network create wp-net
 ```
+![Screenshot%209](Screenshot%202026-03-25%20013048.png)
 
 Run MySQL:
 
@@ -152,6 +162,7 @@ Run WordPress:
 ```bash
 docker run -d --name wordpress --network wp-net -p 8082:80 -e WORDPRESS_DB_HOST=mysql -e WORDPRESS_DB_PASSWORD=secret wordpress:latest
 ```
+![Screenshot%2010](Screenshot%202026-03-25%20013422.png)
 
 Access:
 
@@ -166,6 +177,7 @@ docker stop wordpress mysql
 docker rm wordpress mysql
 docker network rm wp-net
 ```
+![Screenshot%2011](Screenshot%202026-03-25%20013557.png)
 
 ---
 
@@ -198,18 +210,21 @@ services:
 volumes:
   mysql_data:
 ```
+![Screenshot%2012](Screenshot%202026-03-25%20013633.png)
 
 Run:
 
 ```bash
 docker compose up -d
 ```
+![Screenshot%2013](Screenshot%202026-03-25%20013850.png)
 
 Stop:
 
 ```bash
 docker compose down -v
 ```
+![Screenshot%2014](Screenshot%202026-03-25%20013902.png)
 
 ---
 
@@ -229,6 +244,7 @@ docker run -d \
   node:18-alpine
 ```
 
+
 ### Solution:
 
 ```yaml
@@ -245,6 +261,7 @@ services:
       DEBUG: false
     restart: unless-stopped
 ```
+![Screenshot%2015](Screenshot%202026-03-25%20013936.png)
 
 ---
 
@@ -299,6 +316,7 @@ http.createServer((req, res) => {
   res.end("Docker Compose Build Lab");
 }).listen(3000);
 ```
+![Screenshot%2019](Screenshot%202026-03-25%20014324.png)
 
 ---
 
@@ -315,6 +333,7 @@ EXPOSE 3000
 
 CMD ["node", "app.js"]
 ```
+![Screenshot%2020](Screenshot%202026-03-25%20014349.png)
 
 ---
 
@@ -332,6 +351,7 @@ services:
     ports:
       - "3000:3000"
 ```
+![Screenshot%2021](Screenshot%202026-03-25%20014513.png)
 
 ---
 
@@ -340,7 +360,8 @@ services:
 ```bash
 docker compose up --build -d
 ```
-
+![Screenshot%2022](Screenshot%202026-03-25%20014731.png)
+![Screenshot%2023](Screenshot%202026-03-25%20014745.png)
 Access:
 
 ```
