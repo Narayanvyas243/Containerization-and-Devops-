@@ -23,6 +23,7 @@ In this lab, you will:
 ```bash
 kubectl run apache-pod --image=httpd
 ```
+![Screenshot](./Screenshot%202026-03-25%20123736.png)
 
 Check:
 
@@ -37,6 +38,8 @@ kubectl get pods
 ```bash
 kubectl describe pod apache-pod
 ```
+![Screenshot](./Screenshot%202026-03-25%20123749.png)
+![Screenshot](./Screenshot%202026-03-25%20123809.png)
 
 Focus:
 
@@ -45,18 +48,24 @@ Focus:
 * Events
 
 ---
+![Screenshot](./Screenshot%202026-03-25%20123828.png)
+
+![Screenshot](./Screenshot%202026-03-25%20123840.png)
 
 ## 🔹 Step 3: Access the App
 
 ```bash
 kubectl port-forward pod/apache-pod 8081:80
 ```
+![Screenshot](./Screenshot%202026-03-25%20123905.png)
 
 Open in browser:
 
 ```
 http://localhost:8081
 ```
+
+![Screenshot](./Screenshot%202026-03-25%20123912.png)
 
  Output: *Apache default page ("It works!")*
 
@@ -79,6 +88,7 @@ kubectl delete pod apache-pod
 ```bash
 kubectl create deployment apache --image=httpd
 ```
+![Screenshot](./Screenshot%202026-03-25%20124044.png)
 
 Check:
 
@@ -94,6 +104,7 @@ kubectl get pods
 ```bash
 kubectl expose deployment apache --port=80 --type=NodePort
 ```
+![Screenshot](./Screenshot%202026-03-25%20124217.png)
 
 Port forward:
 
@@ -107,6 +118,8 @@ Open:
 http://localhost:8082
 ```
 
+![Screenshot](./Screenshot%202026-03-25%20124229.png)
+
 ---
 
 #  Task 3: Scaling
@@ -116,6 +129,7 @@ http://localhost:8082
 ```bash
 kubectl scale deployment apache --replicas=2
 ```
+![Screenshot](./Screenshot%202026-03-25%20124324.png)
 
 Check:
 
@@ -126,6 +140,7 @@ kubectl get pods
  Multiple pods running
 
 ---
+
 
 ## 🔹 Step 8: Test Load Distribution
 
@@ -144,12 +159,14 @@ http://localhost:8082
 ```bash
 kubectl set image deployment/apache httpd=wrongimage
 ```
+![Screenshot](./Screenshot%202026-03-25%20124433.png)
 
 Check:
 
 ```bash
 kubectl get pods
 ```
+
 
  Status: ImagePullBackOff
 
@@ -160,6 +177,8 @@ kubectl get pods
 ```bash
 kubectl describe pod <pod-name>
 ```
+![Screenshot](./Screenshot%202026-03-25%20125602.png)
+![Screenshot](./Screenshot%202026-03-25%20125613.png)
 
 Look for:
 
@@ -173,12 +192,14 @@ Look for:
 ```bash
 kubectl set image deployment/apache httpd=httpd
 ```
+![Screenshot](./Screenshot%202026-03-25%20125652.png)
 
 Verify:
 
 ```bash
 kubectl get pods
 ```
+![Screenshot](./Screenshot%202026-03-25%20130113.png)
 
 ---
 
@@ -189,7 +210,7 @@ kubectl get pods
 ```bash
 kubectl exec -it <pod-name> -- /bin/bash
 ```
-
+![Screenshot](./Screenshot%202026-03-25%20130113.png)
 Inside container:
 
 ```bash
@@ -213,6 +234,7 @@ exit
 ```bash
 kubectl delete pod <pod-name>
 ```
+![Screenshot](./Screenshot%202026-03-25%20130248.png)
 
 Watch:
 
@@ -230,6 +252,8 @@ kubectl get pods -w
 kubectl delete deployment apache
 kubectl delete service apache
 ```
+
+![Screenshot](./Screenshot%202026-03-25%20130433.png)
 
 ---
 
