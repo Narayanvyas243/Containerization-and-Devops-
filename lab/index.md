@@ -10,6 +10,7 @@ Welcome to my Containerization and DevOps Lab.
 - 👉 [Experiment 4 – Docker Essentials](./exp4/)
 - 👉 [Experiment 5 – Docker Volumes](./exp5/)
 - 👉 [Experiment 6 – Docker Run vs Docker Compose](./exp6/)
+- 👉 [Experiment 7 – Jenkins](./exp7/)
 
 
 
