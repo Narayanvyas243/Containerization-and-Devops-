@@ -132,11 +132,11 @@ This setup allows Jenkins to interact directly with the Docker engine on the hos
 
 ---
 
-[Screenshot](Screenshot%202026-04-01%20011028.png)
-[Screenshot](Screenshot%202026-04-01%20011124.png)
-[Screenshot](Screenshot%202026-04-01%20011530.png)
-[Screenshot](Screenshot%202026-04-01%20021433.png)
-[Screenshot](Screenshot%202026-04-01%20021417.png)
+![Screenshot](Screenshot%202026-04-01%20011028.png)
+![Screenshot](Screenshot%202026-04-01%20011124.png)
+![Screenshot](Screenshot%202026-04-01%20011530.png)
+![Screenshot](Screenshot%202026-04-01%20021433.png)
+![Screenshot](Screenshot%202026-04-01%20021417.png)
 
 ## CI/CD Workflow
 
@@ -162,12 +162,12 @@ https://<ngrok-url>/github-webhook/
 The trigger "GitHub hook trigger for GITScm polling" is enabled in Jenkins.
 
 ---
-[Screenshot](Screenshot%202026-04-01%20134449.png)
-[Screenshot](Screenshot%202026-04-01%20134728.png)
-[Screenshot](Screenshot%202026-04-01%20135317.png)
-[Screenshot](Screenshot%202026-04-01%20135433.png)
-[Screenshot](Screenshot%202026-04-01%20135534.png)
-[Screenshot](Screenshot%202026-04-01%20135708.png)
+![Screenshot](Screenshot%202026-04-01%20134449.png)
+![Screenshot](Screenshot%202026-04-01%20134728.png)
+![Screenshot](Screenshot%202026-04-01%20135317.png)
+![Screenshot](Screenshot%202026-04-01%20135433.png)
+![Screenshot](Screenshot%202026-04-01%20135534.png)
+![Screenshot](Screenshot%202026-04-01%20135708.png)
 ## Errors Faced and Solutions
 
 ### 1. Branch Not Found Error
