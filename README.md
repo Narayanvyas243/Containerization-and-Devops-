@@ -1,6 +1,6 @@
 # Containerization and DevOps Lab
 
-Welcome to my Docker & DevOps Lab experiments repository.
+Welcome to my Containerization & DevOps Lab experiments and Theory repository.
 
 👤 **Name:** NARAYAN VYAS  
 🆔 **SAP ID:** 500122747  
