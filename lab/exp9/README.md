@@ -43,11 +43,14 @@ sudo apt update -y
 sudo apt install ansible -y
 ansible --version
 ```
+![Screenshot 2026-04-11 093157](Screenshot%202026-04-11%20093157.png)
+![Screenshot 2026-04-11 093211](Screenshot%202026-04-11%20093211.png)
 
 ### 2. Generate SSH Keys
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
+![Screenshot 2026-04-14 185827](Screenshot%202026-04-14%20185827.png)
 Press ENTER for default settings (no passphrase).
 
 ### 3. Copy Keys to Project Folder
@@ -55,6 +58,7 @@ Press ENTER for default settings (no passphrase).
 cp ~/.ssh/id_rsa .
 cp ~/.ssh/id_rsa.pub .
 ```
+![Screenshot 2026-04-14 223025](Screenshot%202026-04-14%20223025.png)
 
 ### 4. Docker Setup (Dockerfile)
 ```dockerfile
@@ -78,6 +82,7 @@ RUN chmod 600 /root/.ssh/id_rsa && chmod 644 /root/.ssh/authorized_keys
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 ```
+![Screenshot 2026-04-14 190105](Screenshot%202026-04-14%20190105.png)
 
 ### 5. Build Docker Image
 ```bash
@@ -90,6 +95,7 @@ for i in {1..4}; do
   docker run -d -p 220${i}:22 --name server${i} ubuntu-server
 done
 ```
+![Screenshot 2026-04-14 223414](Screenshot%202026-04-14%20223414.png)
 
 ### 7. Ansible Configuration (inventory.ini)
 ```ini
@@ -104,6 +110,7 @@ ansible_user=root
 ansible_ssh_private_key_file=~/.ssh/id_rsa
 ansible_python_interpreter=/usr/bin/python3
 ```
+![Screenshot 2026-04-14 223819](Screenshot%202026-04-14%20223819.png)
 
 ### 8. Add SSH Hosts
 ```bash
@@ -112,11 +119,13 @@ ssh-keyscan -p 2202 localhost >> ~/.ssh/known_hosts
 ssh-keyscan -p 2203 localhost >> ~/.ssh/known_hosts
 ssh-keyscan -p 2204 localhost >> ~/.ssh/known_hosts
 ```
+![Screenshot 2026-04-14 224035](Screenshot%202026-04-14%20224035.png)
 
 ### 9. Test Connectivity
 ```bash
 ansible all -i inventory.ini -m ping
 ```
+![Screenshot 2026-04-14 224056](Screenshot%202026-04-14%20224056.png)
 Expected Output:
 server1 | SUCCESS => pong
 server2 | SUCCESS => pong
@@ -145,21 +154,25 @@ server4 | SUCCESS => pong
         dest: /root/ansible_test.txt
         content: "Configured by Ansible"
 ```
+![Screenshot 2026-04-14 224145](Screenshot%202026-04-14%20224145.png)
 
 ### 11. Run Playbook
 ```bash
 ansible-playbook -i inventory.ini playbook.yml
 ```
+![Screenshot 2026-04-14 224258](Screenshot%202026-04-14%20224258.png)
 
 ### 12. Verify Results
 ```bash
 ansible all -i inventory.ini -m command -a "cat /root/ansible_test.txt"
 ```
+![Screenshot 2026-04-14 224320](Screenshot%202026-04-14%20224320.png)
 
 ### 13. Cleanup
 ```bash
 for i in {1..4}; do docker rm -f server${i}; done
 ```
+![Screenshot 2026-04-14 224340](Screenshot%202026-04-14%20224340.png)
 
 ## Problems Faced and Solutions
 1. **SSH Keys Not Found During Docker Build**
