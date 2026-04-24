@@ -12,6 +12,7 @@ Welcome to my Containerization and DevOps Lab.
 - 👉 [Experiment 6 – Docker Run vs Docker Compose](./exp6/)
 - 👉 [Experiment 7 – Jenkins](./exp7/)
 - 👉 [Experiment 9 – Ansible](./exp9/)
+- 👉 [Experiment 10 – SonarQube](./exp10/)
 
 
 
