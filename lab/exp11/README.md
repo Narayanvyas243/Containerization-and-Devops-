@@ -38,7 +38,7 @@ docker run → docker compose → docker swarm → kubernetes
 Command used:
 docker compose down -v
 docker ps
-
+![ss](./Screenshot%202026-04-24%20225210.png)
 Observation:
 All running containers were stopped and removed successfully.
 
@@ -48,7 +48,7 @@ All running containers were stopped and removed successfully.
 
 Command used:
 nano docker-compose.yml
-
+![ss](./Screenshot%202026-04-24%20225145.png)
 Content of file:
 
 version: '3.9'
@@ -96,7 +96,7 @@ docker swarm init
 
 Verification:
 docker node ls
-
+![ss](./Screenshot%202026-04-24%20225238.png)
 Observation:
 System became manager node and status was shown as Ready, Active, Leader.
 
@@ -118,7 +118,8 @@ Commands used:
 docker service ls
 docker service ps wpstack_wordpress
 docker ps
-
+![ss](./Screenshot%202026-04-24%20225250.png)
+![ss](./Screenshot%202026-04-24%20225303.png)
 Observation:
 Services were running and containers were managed by Swarm.
 
@@ -128,7 +129,7 @@ Services were running and containers were managed by Swarm.
 
 URL used:
 http://localhost:8080
-
+![ss](./Screenshot%202026-04-24%20225400.png)
 Observation:
 WordPress setup page opened successfully in browser.
 
@@ -138,7 +139,7 @@ WordPress setup page opened successfully in browser.
 
 Command used:
 docker service scale wpstack_wordpress=3
-
+![ss](./Screenshot%202026-04-24%20225455.png)
 Verification:
 docker service ls
 docker ps
@@ -155,7 +156,7 @@ Commands used:
 docker ps
 docker kill <container-id>
 docker service ps wpstack_wordpress
-
+![ss](./Screenshot%202026-04-24%20225552.png)
 Observation:
 After killing one container, a new container was automatically created.
 Total replicas remained 3.
