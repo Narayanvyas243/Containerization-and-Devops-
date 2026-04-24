@@ -168,7 +168,8 @@ This confirmed self-healing behavior.
 
 Command used:
 docker stack rm wpstack
-
+![ss](./Screenshot%202026-04-24%20232133.png)
+Screenshot%202026-04-24%20232133.png
 Verification:
 docker service ls
 docker ps
