@@ -59,7 +59,7 @@ Your Code → Sonar Scanner → SonarQube Server → Dashboard
 * Docker Compose installed
 * Java (JDK 11+)
 * Maven installed
-
+![ss](./Screenshot%202026-04-24%20184529.png) 
 ---
 
 ## 5. Procedure
@@ -112,6 +112,7 @@ networks:
   sonarqube-lab:
     driver: bridge
 ```
+![ss](./Screenshot%202026-04-24%20185338.png)
 
 Run commands:
 
@@ -119,13 +120,15 @@ Run commands:
 docker-compose up -d
 docker-compose logs -f sonarqube
 ```
-
+![ss](./Screenshot%202026-04-24%20185443.png)
+![ss](./Screenshot%202026-04-24%20185550.png)
+![ss](./Screenshot%202026-04-24%20185601.png)
 Open browser:
 
 ```
 http://localhost:9000
 ```
-
+![ss](./Screenshot%202026-04-24%20185634.png)
 Login:
 
 ```
@@ -134,6 +137,7 @@ Password: admin
 ```
 
 ---
+![ss](./Screenshot%202026-04-24%20185710.png)
 
 ### Step 2: Create Java Project
 
@@ -143,7 +147,7 @@ Commands used:
 mkdir -p sample-java-app/src/main/java/com/example
 cd sample-java-app
 ```
-
+![ss](./Screenshot%202026-04-24%20190150.png)
 Create `Calculator.java`:
 
 ```java
@@ -196,6 +200,7 @@ public class Calculator {
 ```
 
 ---
+![ss](./Screenshot%202026-04-24%20190126.png)
 
 ### Step 3: Create pom.xml
 
@@ -230,8 +235,9 @@ public class Calculator {
 
 </project>
 ```
-
 ---
+
+![ss](./Screenshot%202026-04-24%20190901.png)
 
 ### Step 4: Generate Token
 
@@ -243,7 +249,7 @@ Steps:
 4. Copy token
 
 ---
-
+![ss](./Screenshot%202026-04-24%20190404.png)
 ### Step 5: Run Analysis
 
 Commands used:
@@ -254,6 +260,8 @@ mvn sonar:sonar -Dsonar.login=YOUR_TOKEN
 ```
 
 ---
+![ss](./Screenshot%202026-04-24%20190842.png)
+![ss](./Screenshot%202026-04-24%20190851.png)
 
 ### Step 6: View Results
 
