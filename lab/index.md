@@ -13,6 +13,7 @@ Welcome to my Containerization and DevOps Lab.
 - 👉 [Experiment 7 – Jenkins](./exp7/)
 - 👉 [Experiment 9 – Ansible](./exp9/)
 - 👉 [Experiment 10 – SonarQube](./exp10/)
+- 👉 [Experiment 11 – Orchestration](./exp11/)
 
 
 
