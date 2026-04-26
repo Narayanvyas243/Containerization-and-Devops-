@@ -7,12 +7,12 @@
 
 ---
 
-## 🎯 Aim
+##  Aim
 To compare Virtual Machines (VMs) using **Vagrant** and Containers using **Docker**, and analyze differences in performance, resource usage, startup time, and efficiency.
 
 ---
 
-## 🧠 Theory
+##  Theory
 
 ### Virtual Machine (VM)
 A Virtual Machine runs a complete Guest Operating System on top of a hypervisor.  
