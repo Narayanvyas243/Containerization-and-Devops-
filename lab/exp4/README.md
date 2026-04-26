@@ -1,6 +1,6 @@
 #  Experiment 4: Docker Essentials
 
-## 📌 Objective
+##  Objective
 
 This experiment demonstrates:
 
@@ -19,7 +19,7 @@ This experiment demonstrates:
 
 ![Screenshot](Screenshot%202026-02-20%20102415.png)
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 my-flask-app/
@@ -32,7 +32,7 @@ my-flask-app/
 
 ---
 
-## 📝 app.py
+##  app.py
 
 ```python
 from flask import Flask
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
 ---
 
-## 📄 requirements.txt
+##  requirements.txt
 ![Screenshot](Screenshot%202026-02-20%20102556.png)
 ```
 Flask==2.3.3
@@ -90,9 +90,9 @@ CMD ["python", "app.py"]
 
 ---
 
-# 📂 Part 2: .dockerignore
+#  Part 2: .dockerignore
 
-## 📄 .dockerignore
+##  .dockerignore
 ![Screenshot](Screenshot%202026-02-20%20103058.png)
 ```
 __pycache__/
@@ -130,7 +130,7 @@ test_*.py
 
 ---
 
-# 🏗 Part 3: Building Docker Images
+#  Part 3: Building Docker Images
 
 ## Build Image
 
@@ -213,9 +213,9 @@ docker rm -f flask-container
 
 ---
 
-# 🏗 Part 5: Multi-stage Build
+#  Part 5: Multi-stage Build
 ![Screenshot](Screenshot%202026-02-20%20111253.png)
-## 📄 Dockerfile.multistage
+##  Dockerfile.multistage
 
 ```dockerfile
 # STAGE 1: Builder
@@ -288,7 +288,7 @@ docker build -t flask-single-stage .
 ```
 ![Screenshot](Screenshot%202026-02-20%20220026.png)
 
-# 📊 Image Size Check
+#  Image Size Check
 
 ```
 docker images | grep flask
@@ -340,7 +340,7 @@ docker run -d -p 5000:5000 username/my-flask-app:latest
 
 #  Part 7: Node.js Example
 ![Screenshot](Screenshot%202026-02-20%20224556.png)
-## 📁 Project Structure
+##  Project Structure
 
 ```
 my-node-app/
@@ -352,7 +352,7 @@ my-node-app/
 
 ---
 
-## 📝 app.js
+##  app.js
 
 ```javascript
 const express = require('express');
@@ -374,7 +374,7 @@ app.listen(port, () => {
 
 ---
 
-## 📄 package.json
+##  package.json
 
 ```json
 {
@@ -390,7 +390,7 @@ app.listen(port, () => {
 
 ---
 
-## 🐳 Node.js Dockerfile
+##  Node.js Dockerfile
 ![Screenshot](Screenshot%202026-02-20%20224723.png)
 ```dockerfile
 FROM node:18-alpine
@@ -425,7 +425,7 @@ curl http://localhost:3000
 
 ---
 
-# 📋 Essential Docker Commands
+#  Essential Docker Commands
 
 | Command | Purpose |
 |----------|----------|
@@ -444,7 +444,7 @@ curl http://localhost:3000
 
 ---
 
-# 🔁 Development Workflow
+#  Development Workflow
 
 1. Create Dockerfile and .dockerignore  
 2. Build image  
@@ -455,7 +455,7 @@ curl http://localhost:3000
 
 ---
 
-# 🧹 Cleanup Commands
+#  Cleanup Commands
 
 ```bash
 docker container prune
