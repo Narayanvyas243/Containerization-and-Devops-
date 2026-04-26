@@ -23,14 +23,14 @@ To understand Kubernetes concepts and perform deployment, service exposure, scal
 sudo apt update
 sudo apt install -y curl apt-transport-https docker.io
 ```
-
+![ss](./Screenshot%202026-04-24%20234104.png)
 ### Step 2: Install Minikube
 
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
-
+![ss](./Screenshot%202026-04-24%20235410.png)
 ### Step 3: Verify Installation
 
 ```bash
@@ -38,6 +38,7 @@ minikube version
 kubectl version --client
 docker --version
 ```
+![ss](./Screenshot%202026-04-24%20234123.png)
 
 ---
 
@@ -46,7 +47,7 @@ docker --version
 ```bash
 minikube start --driver=docker
 ```
-
+![ss](./Screenshot%202026-04-24%20235419.png)
 Check cluster:
 
 ```bash
@@ -80,13 +81,13 @@ spec:
         ports:
         - containerPort: 80
 ```
-
+![ss](./Screenshot%202026-04-24%20235445.png)
 ### Apply Deployment
 
 ```bash
 kubectl apply -f wordpress-deployment.yaml
 ```
-
+![ss](./Screenshot%202026-04-24%20235510.png)
 ### Verify Pods
 
 ```bash
@@ -113,18 +114,19 @@ spec:
       targetPort: 80
       nodePort: 30007
 ```
-
+![ss](./Screenshot%202026-04-24%20235526.png)
 ### Apply Service
 
 ```bash
 kubectl apply -f wordpress-service.yaml
 ```
-
+![ss](./Screenshot%202026-04-24%20235606.png)
 ### Verify Service
 
 ```bash
 kubectl get svc
 ```
+![ss](./Screenshot%202026-04-24%20235733.png)
 
 ---
 
@@ -135,7 +137,7 @@ Attempted URL:
 ```text
 http://192.168.49.2:30007
 ```
-
+![ss](./Screenshot%202026-04-25%20000409.png)
 This did not work due to WSL and Docker driver networking limitations.
 
 ### Correct Method Used:
@@ -143,7 +145,7 @@ This did not work due to WSL and Docker driver networking limitations.
 ```bash
 minikube service wordpress-service
 ```
-
+![ss](./Screenshot%202026-04-25%20000658.png)
 Output:
 
 ```text
@@ -155,6 +157,7 @@ Accessed application using:
 ```text
 http://127.0.0.1:42465
 ```
+![ss](./Screenshot%202026-04-25%20000616.png)
 
 ---
 
