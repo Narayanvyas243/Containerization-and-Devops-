@@ -1,4 +1,4 @@
-# CI/CD Pipeline using Jenkins, GitHub, and Docker Hub
+# EXPERIMENT 7 : CI/CD Pipeline using Jenkins, GitHub, and Docker Hub
 
 ## Project Overview
 
