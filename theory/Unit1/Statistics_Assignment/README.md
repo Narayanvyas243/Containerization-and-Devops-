@@ -7,7 +7,7 @@ Batch: 2 (CCVT)
 
 ---
 
-# EXPERIMENT 1: Principal Component Analysis (PCA)
+# QUESTION 1: Principal Component Analysis (PCA)
 
 ## Objective
 To reduce the number of features (dimensions) in customer data while preserving maximum important information and visualize patterns.
@@ -101,7 +101,7 @@ PCA scatter plot
 
 PCA reduces complexity while preserving important information and helps in visualization and pattern detection.
 
-# EXPERIMENT 2: Time Series Analysis
+# QUESTION 2: Time Series Analysis
 
 ## Objective
 To analyze past sales data and predict future values using time series models.
