@@ -99,13 +99,13 @@ plt.show()
 ```
 ![ss](./Screenshot%202026-05-03%20162453.png)
 ![ss](./Screenshot%202026-05-03%20162502.png)
-##Output
+## Output
 Explained variance graph
 PCA scatter plot
 ![ss](./Screenshot%202026-05-03%20162536.png)
 ![ss](./Screenshot%202026-05-03%20162548.png)
 ![ss](./Screenshot%202026-05-03%20163228.png)
-##Conclusion
+## Conclusion
 
 PCA reduces complexity while preserving important information and helps in visualization and pattern detection.
 
@@ -248,7 +248,7 @@ print("RMSE:", rmse)
 ![ss](./Screenshot%202026-05-03%20163434.png)
 ![ss](./Screenshot%202026-05-03%20163444.png)
 ![ss](./Screenshot%202026-05-03%20163456.png)
-##Output
+## Output
 Time series graph
 
 Decomposition graph
@@ -260,5 +260,5 @@ MAE and RMSE values
 ![ss](./Screenshot%202026-05-03%20165133.png)
 ![ss](./Screenshot%202026-05-03%20165143.png)
 ![ss](./Screenshot%202026-05-03%20165204.png)
-##Conclusion
+## Conclusion
 Time series analysis helps understand trends and patterns in data. ARIMA models are effective for forecasting future values.
