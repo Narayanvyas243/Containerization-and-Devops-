@@ -1,14 +1,9 @@
-Markdown
-
 # STATISTICS AND DATA ANALYSIS ASSIGNMENT – 2
 
 ## Student Details
 Name: Narayan Vyas  
 SAP ID: 500122747  
-Batch: 2 (CCVT)  
-
-## University
-University of Petroleum and Energy Studies  
+Batch: 2 (CCVT)   
 
 ---
 
@@ -40,51 +35,41 @@ These are numerical features describing customer behavior.
 
 ## Step-by-Step Code
 
-### Step 1: Import Libraries
+# Step 1: Import Libraries
 ```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-Step 2: Load Dataset
-Python
-
-
-Run
+```
+# Step 2: Load Dataset
+```python
 df = pd.read_csv("customer_data.csv")
 print(df.head())
-Step 3: Handle Missing Values
-Python
-
-
-Run
+```
+# Step 3: Handle Missing Values
+```python
 df.fillna(df.mean(numeric_only=True), inplace=True)
-Step 4: Select Numeric Columns
-Python
+```
 
-
-Run
+# Step 4: Select Numeric Columns
+```python
 df_numeric = df.select_dtypes(include=[np.number])
-Step 5: Normalize Data
-Python
-
-
-Run
+```
+# Step 5: Normalize Data
+```python
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(df_numeric)
-Step 6: Apply PCA
-Python
-
-
-Run
+```
+# Step 6: Apply PCA
+```python
 pca = PCA()
 pca_data = pca.fit_transform(scaled_data)
-Step 7: Explained Variance
-Python
+```
 
-
-Run
+# Step 7: Explained Variance
+```python
 explained_variance = pca.explained_variance_ratio_
 
 plt.plot(explained_variance.cumsum(), marker='o')
@@ -93,56 +78,56 @@ plt.ylabel("Cumulative Explained Variance")
 plt.title("Explained Variance by Components")
 plt.grid()
 plt.show()
-Step 8: Reduce to 2 Components
-Python
-
-
-Run
+```
+# Step 8: Reduce to 2 Components
+```python
 pca = PCA(n_components=2)
 pca_data = pca.fit_transform(scaled_data)
-Step 9: Visualization
-Python
-
-
-Run
+```
+# Step 9: Visualization
+```python
 plt.scatter(pca_data[:,0], pca_data[:,1])
 plt.xlabel("Principal Component 1")
 plt.ylabel("Principal Component 2")
 plt.title("PCA Scatter Plot")
 plt.grid()
 plt.show()
-Output
+```
+##Output
 Explained variance graph
-
 PCA scatter plot
 
-Conclusion
+##Conclusion
+
 PCA reduces complexity while preserving important information and helps in visualization and pattern detection.
 
-EXPERIMENT 2: Time Series Analysis
-Objective
+# EXPERIMENT 2: Time Series Analysis
+
+## Objective
 To analyze past sales data and predict future values using time series models.
 
-What is Time Series
+---
+
+## What is Time Series
 A time series is data collected over time.
 
 Examples:
+- Sales per day  
+- Temperature per month  
 
-Sales per day
+---
 
-Temperature per month
+## Dataset Description
+- Date  
+- Sales  
 
-Dataset Description
-Date
+---
 
-Sales
-
-Step-by-Step Code
-Step 1: Import Libraries
-Python
+## Step-by-Step Code
 
 
-Run
+# Step 1: Import Libraries
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -150,26 +135,20 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-Step 2: Load Dataset
-Python
-
-
-Run
+```
+# Step 2: Load Dataset
+```python
 df = pd.read_csv("sales_data.csv")
 print(df.head())
-Step 3: Data Cleaning
-Python
-
-
-Run
+```
+# Step 3: Data Cleaning
+```python
 df = df[df['Date'] != 'Date']
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 df.dropna(inplace=True)
-Step 4: Handle Small Dataset
-Python
-
-
-Run
+```
+# Step 4: Handle Small Dataset
+```python
 if len(df) < 30:
     dates = pd.date_range(start="2021-01-01", periods=120, freq='D')
     sales = np.random.randint(150, 300, size=120)
@@ -178,30 +157,25 @@ if len(df) < 30:
         'Date': dates,
         'Sales': sales
     })
-Step 5: Set Index
-Python
-
-
-Run
+```
+# Step 5: Set Index
+```python
 df.set_index('Date', inplace=True)
 df = df.ffill()
-Step 6: Plot Time Series
-Python
-
-
-Run
+```
+# Step 6: Plot Time Series
+```python
 plt.figure(figsize=(8,4))
 plt.plot(df['Sales'])
 plt.title("Sales Over Time")
 plt.xlabel("Date")
 plt.ylabel("Sales")
 plt.grid()
+
 plt.show()
-Step 7: Decomposition
-Python
-
-
-Run
+```
+# Step 7: Decomposition
+```python
 if len(df) < 50:
     period_value = 2
 elif len(df) < 200:
@@ -211,12 +185,11 @@ else:
 
 decomposition = seasonal_decompose(df['Sales'], model='additive', period=period_value)
 decomposition.plot()
+
 plt.show()
-Step 8: Stationarity Test (ADF)
-Python
-
-
-Run
+```
+# Step 8: Stationarity Test (ADF)
+```python
 result = adfuller(df['Sales'])
 print("ADF Statistic:", result[0])
 print("p-value:", result[1])
@@ -225,33 +198,25 @@ if result[1] < 0.05:
     print("Data is Stationary")
 else:
     print("Data is NOT Stationary")
-Step 9: Train-Test Split
-Python
-
-
-Run
+```
+# Step 9: Train-Test Split
+```python
 train = df['Sales'][:-30]
 test = df['Sales'][-30:]
-Step 10: ARIMA Model
-Python
-
-
-Run
+```
+# Step 10: ARIMA Model
+```python
 model = ARIMA(train, order=(2,1,2))
 model_fit = model.fit()
 print(model_fit.summary())
-Step 11: Forecast
-Python
-
-
-Run
+```
+# Step 11: Forecast
+```python
 forecast = model_fit.forecast(steps=30)
 future_dates = pd.date_range(start=df.index[-1], periods=30, freq='D')
-Step 12: Plot Forecast
-Python
-
-
-Run
+```
+# Step 12: Plot Forecast
+```python
 plt.figure(figsize=(8,4))
 plt.plot(test.index, test, label="Actual")
 plt.plot(future_dates, forecast, label="Forecast")
@@ -260,18 +225,18 @@ plt.xlabel("Date")
 plt.ylabel("Sales")
 plt.legend()
 plt.grid()
+
 plt.show()
-Step 13: Evaluation
-Python
-
-
-Run
+```
+# Step 13: Evaluation
+```python
 mae = mean_absolute_error(test, forecast)
 rmse = np.sqrt(mean_squared_error(test, forecast))
 
 print("MAE:", mae)
 print("RMSE:", rmse)
-Output
+```
+##Output
 Time series graph
 
 Decomposition graph
@@ -280,8 +245,5 @@ Forecast vs actual graph
 
 MAE and RMSE values
 
-Conclusion
+##Conclusion
 Time series analysis helps understand trends and patterns in data. ARIMA models are effective for forecasting future values.
-
-Final Conclusion
-PCA reduces dimensions and simplifies data while preserving important information. Time series analysis helps predict future trends. Both techniques are essential in data science.
