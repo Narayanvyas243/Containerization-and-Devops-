@@ -17,4 +17,6 @@ This section covers all basic Docker concepts and commands.
 👉 [Multistage Dockerfiles](./Multistage%20Dockerfiles/)
 
 👉 [Apche web app](./Apache-Web-App/)
+👉 [Apche web app12](./Statistics_Assignment/)
+
 
