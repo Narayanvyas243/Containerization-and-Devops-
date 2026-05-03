@@ -34,6 +34,8 @@ These are numerical features describing customer behavior.
 ---
 
 ## Step-by-Step Code
+![ss](./Screenshot%202026-05-03%20161850.png)
+![ss](./Screenshot%202026-05-03%20161921.png)
 
 # Step 1: Import Libraries
 ```python
@@ -44,6 +46,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 ```
 # Step 2: Load Dataset
+![ss](./Screenshot%202026-05-03%20162317.png)
+![ss](./Screenshot%202026-05-03%20162322.png)
 ```python
 df = pd.read_csv("customer_data.csv")
 print(df.head())
@@ -93,16 +97,21 @@ plt.title("PCA Scatter Plot")
 plt.grid()
 plt.show()
 ```
+![ss](./Screenshot%202026-05-03%20162453.png)
+![ss](./Screenshot%202026-05-03%20162502.png)
 ##Output
 Explained variance graph
 PCA scatter plot
-
+![ss](./Screenshot%202026-05-03%20162536.png)
+![ss](./Screenshot%202026-05-03%20162548.png)
+![ss](./Screenshot%202026-05-03%20163228.png)
 ##Conclusion
 
 PCA reduces complexity while preserving important information and helps in visualization and pattern detection.
 
 # QUESTION 2: Time Series Analysis
-
+![ss](./Screenshot%202026-05-03%20163635.png)
+[ss](./Screenshot%202026-05-03%20164531.png)
 ## Objective
 To analyze past sales data and predict future values using time series models.
 
@@ -236,6 +245,9 @@ rmse = np.sqrt(mean_squared_error(test, forecast))
 print("MAE:", mae)
 print("RMSE:", rmse)
 ```
+![ss](./Screenshot%202026-05-03%20163434.png)
+![ss](./Screenshot%202026-05-03%20163444.png)
+![ss](./Screenshot%202026-05-03%20163456.png)
 ##Output
 Time series graph
 
@@ -244,6 +256,9 @@ Decomposition graph
 Forecast vs actual graph
 
 MAE and RMSE values
-
+![ss](./Screenshot%202026-05-03%20165124.png)
+![ss](./Screenshot%202026-05-03%20165133.png)
+![ss](./Screenshot%202026-05-03%20165143.png)
+![ss](./Screenshot%202026-05-03%20165204.png)
 ##Conclusion
 Time series analysis helps understand trends and patterns in data. ARIMA models are effective for forecasting future values.
